@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-item ng-repeat="post in $ctrl.posts" href="#/app/post/{{post.id}}" class="post_item">
+    
+    <div class="item_head">
+		<img ng-src="{{ $ctrl.users[post.author].avatar_urls[48] }}" align="left" />    
+		<div class="name">{{ $ctrl.users[1].name }}</div>
+		<div class="date">{{ post.date }}</div>
+	    <div class="clear"></div>
+    </div>
+    
+    <h2>{{post.title.rendered}}</h2>
+    <div ng-bind-html="post.excerpt.rendered"></div>
+
+  </ion-item>
+</ion-list>
+
+<ion-infinite-scroll ng-if="!$ctrl.noMorePosts" on-infinite="$ctrl.loadMore()" distance="1%"></ion-infinite-scroll>

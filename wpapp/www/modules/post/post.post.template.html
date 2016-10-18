@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-item class="post_item">
+    
+    	<div class="item_head">
+    		<img ng-src="{{ $ctrl.users[$ctrl.post.author].avatar_urls[48] }}" align="left" />    
+    		<div class="name">{{ $ctrl.users[1].name }}</div>
+    		<div class="date">{{ $ctrl.post.date }}</div>
+    	    <div class="clear"></div>
+    	</div>
+
+    	<h2>{{$ctrl.post.title.rendered}}</h2>
+    	<div ng-bind-html="$ctrl.post.content.rendered"></div>
+
+  </ion-item>
+</ion-list>
+
+
+
